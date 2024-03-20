@@ -16,7 +16,7 @@ axios.get('http://localhost:8081/read/'+id)
 setCustomer(res.data[0])
 })
 .catch(err => console.log(err))
-    },[])
+    },[id])
 
   return (
     <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>

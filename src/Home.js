@@ -8,10 +8,10 @@ function Home() {
 
   useEffect(() => {
     axios.get('http://localhost:8081/')
-      .then(res => setData(res.data))
-      .catch(err => console.log(err));
-  }, []);
-
+    .then(res => setData(res.data))
+    .catch(err => console.log(err))
+  },[])
+  
   const handleDelete = (id) => {
     Swal.fire({
       title: 'Are you sure?',
@@ -56,8 +56,8 @@ function Home() {
             </tr>
           </thead>
           <tbody>
-            {data.map((customer, index) => (
-              <tr key={index}>
+            {data.map((customer, index) => {
+              return <tr key={index}>
                 <td>{customer.CustomerId}</td>
                 <td>{customer.Name}</td>
                 <td>{customer.Email}</td>
@@ -67,7 +67,7 @@ function Home() {
                   <button onClick={() => handleDelete(customer.CustomerId)} className='btn btn-sm btn-danger'>Delete</button>
                 </td>
               </tr>
-            ))}
+})}
           </tbody>
         </table>
       </div>

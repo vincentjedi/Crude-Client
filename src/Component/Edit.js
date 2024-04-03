@@ -36,7 +36,7 @@ Swal.fire({
     confirmButtonText: "Yes, Update!"
   }).then((result) => {
     if (result.isConfirmed) {
-        axios.put('http://localhost:8081/edit/'+id, values)
+        axios.put('https://crud-server-cust.vercel.app/edit/'+id, values)
         .then(res => {
             console.log(res)
             navigate('/')

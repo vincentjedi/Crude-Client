@@ -15,7 +15,7 @@ function Create() {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        axios.post('http://localhost:8081/customer', values)
+        axios.post('https://crud-server-cust.vercel.app/customer', values)
         .then(res => 
         {console.log(res)
         navigate('/')}

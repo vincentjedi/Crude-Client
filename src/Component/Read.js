@@ -10,7 +10,7 @@ function Read() {
     const [customer, setCustomer] = useState([]);
 
     useEffect(() => {
-axios.get('http://localhost:8081/read/'+id)
+axios.get('https://crud-server-cust.vercel.app/read/'+id)
 .then(res => {
     console.log(res)
 setCustomer(res.data[0])

@@ -7,7 +7,7 @@ function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8081/')
+    axios.get('https://crud-server-cust.vercel.app/')
     .then(res => setData(res.data))
     .catch(err => console.log(err))
   },[])

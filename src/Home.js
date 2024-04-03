@@ -23,7 +23,7 @@ function Home() {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:8081/delete/${id}`)
+        axios.delete(`https://crud-server-cust.vercel.app/delete/${id}`)
           .then(() => {
             // Update the state by filtering out the deleted record
             setData(prevData => prevData.filter(item => item.CustomerId !== id));

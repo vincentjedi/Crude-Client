@@ -7,7 +7,7 @@ import { Link, useParams } from 'react-router-dom'
 function Read() {
 
     const {id} = useParams();
-    const [customer, setCustomer] = useState([]);
+    const [customer, setCustomer] = useState({});
 
     useEffect(() => {
 axios.get('https://crud-server-cust.vercel.app/read/'+id)

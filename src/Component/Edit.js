@@ -7,22 +7,27 @@ function Edit() {
 
     const {id} = useParams();
     
-
-    useEffect(() => {
-        axios.get('https://crud-server-cust.vercel.app/read/'+id)
-        .then(res => {
-            console.log(res)
-        setValues({...values, name:res.data[0].Name, email:res.data[0].Email})
-        })
-        .catch(err => console.log(err))
-            });
+    const navigate = useNavigate();
 
     const [values, setValues] = useState({
-        name: '',
-        email: ''
-    })
+      name: '',
+      email: ''
+  })
 
-    const navigate = useNavigate();
+  useEffect(() => {
+    axios.get('https://crud-server-cust.vercel.app/read/' + id)
+        .then(res => {
+            console.log(res)
+            setValues(prevValues => ({
+                ...prevValues,
+                name: res.data[0].Name,
+                email: res.data[0].Email
+            }));
+        })
+        .catch(err => console.log(err))
+}, [id]);
+
+
 
     const handleUpdate = (event) => {
 event.preventDefault();

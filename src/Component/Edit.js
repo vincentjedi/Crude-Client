@@ -15,7 +15,7 @@ function Edit() {
         setValues({...values, name:res.data[0].Name, email:res.data[0].Email})
         })
         .catch(err => console.log(err))
-            },[]);
+            });
 
     const [values, setValues] = useState({
         name: '',

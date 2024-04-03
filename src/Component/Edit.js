@@ -9,13 +9,13 @@ function Edit() {
     
 
     useEffect(() => {
-        axios.get('https://crud-server-cust.vercel.app/read/'+id, values)
+        axios.get('https://crud-server-cust.vercel.app/read/'+id)
         .then(res => {
             console.log(res)
         setValues({...values, name:res.data[0].Name, email:res.data[0].Email})
         })
         .catch(err => console.log(err))
-            });
+            },[]);
 
     const [values, setValues] = useState({
         name: '',

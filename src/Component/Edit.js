@@ -9,7 +9,7 @@ function Edit() {
     
 
     useEffect(() => {
-        axios.get('https://crud-server-cust.vercel.app/read/'+id)
+        axios.get('https://crud-server-cust.vercel.app/read/'+id, values)
         .then(res => {
             console.log(res)
         setValues({...values, name:res.data[0].Name, email:res.data[0].Email})
